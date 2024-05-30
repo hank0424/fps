@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
     [Header("UI物件")]
     public TextMeshProUGUI ammunitionDisplay; // 彈量顯示
     public TextMeshProUGUI reloadingDisplay;  // 顯示是不是正在換彈夾？
-
+    public Animator animator;
     private void Start()
     {
         bulletsLeft = magazineSize;        // 遊戲一開始彈夾設定為全滿狀態
@@ -40,12 +40,14 @@ public class Shooting : MonoBehaviour
     private void MyInput()
     {
         // 判斷：有沒有按下左鍵？
-        if (Input.GetMouseButtonDown(0) == true)
+        if (Input.GetMouseButton(0) == true)
         {
             // 如果還有子彈，並且沒有正在重裝子彈，就可以射擊
             if (bulletsLeft > 0 && !reloading)
             {
                 Shoot();
+                animator.SetTrigger("fire");
+                
             }
         }
 
@@ -78,7 +80,7 @@ public class Shooting : MonoBehaviour
         bulletsLeft--;    // 將彈夾中的子彈減一，以下的寫法都是一樣的意思
                           //bulletsLeft -= 1;               
                           //bulletsLeft = bulletsLeft - 1;  // 比較囉嗦的寫法
-
+        
         ShowAmmoDisplay();                 // 更新彈量顯示
     }
 

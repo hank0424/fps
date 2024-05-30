@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 17822981}
   - component: {fileID: 17822980}
   - component: {fileID: 17822979}
+  - component: {fileID: 17822982}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -151,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 17822977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.38, y: -0.26, z: 0.8}
+  m_LocalPosition: {x: 0.38, y: -0.26, z: 0.78}
   m_LocalScale: {x: 0.14, y: 0.29, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -229,6 +230,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17822977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &17822982
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17822977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 598bc8234b3f0f24f806ec3a5bd3b2d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &28688594
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +422,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 485}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &189496901
 CanvasRenderer:
@@ -1011,7 +1033,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1621,14 +1643,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b156192f7df470e4d93b0100c780a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
+  PlayerCamera: {fileID: 963194227}
   attackPoint: {fileID: 85299871}
   bullet: {fileID: 8992945343395727259, guid: 02bc9b25cf14dfa4fababb8759deb032, type: 3}
-  magazineSize: 0
-  bulletsLeft: 0
-  reloadTime: 0
+  magazineSize: 1000
+  bulletsLeft: 1000
+  reloadTime: 1
   ammunitionDisplay: {fileID: 189496902}
   reloadingDisplay: {fileID: 1797423129}
+  animator: {fileID: 17822982}
 --- !u!4 &1888753902
 Transform:
   m_ObjectHideFlags: 0
