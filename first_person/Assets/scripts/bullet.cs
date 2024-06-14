@@ -15,4 +15,11 @@ public class bullet : MonoBehaviour
     {
         
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag==("enemy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
